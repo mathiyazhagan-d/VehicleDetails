@@ -24,8 +24,6 @@ async function bike() {
   let content = document.getElementById("content");
   let num = document.getElementById("val");
   let data = await (await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/GetWMIsForManufacturer/hon?format=json`)).json();
-  console.log(data.Results.length)
-  console.log(data)
   data.Results.forEach((e, index) => {
     content.innerHTML += `<tr>
     <th scope="row">${index + 1}</th>
@@ -41,11 +39,3 @@ async function bike() {
 bike();
 
 
-/*Country:null
-CreatedOn:"2022-01-21"
-DateAvailableToPublic:"2022-01-21"
-Id:21257
-Name:"JIANGSU ZHONGXING MOTORCYCLE CO.,LTD."
-UpdatedOn:null
-VehicleType:"Motorcycle"
-WMI:"HJ7"*/
