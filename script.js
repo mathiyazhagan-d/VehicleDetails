@@ -23,7 +23,11 @@ document.body.append(title);
 async function bike() {
   let content = document.getElementById("content");
   let num = document.getElementById("val");
-  let data = await (await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/GetWMIsForManufacturer/hon?format=json`)).json();
+  let data = await (
+    await fetch(
+      `https://vpic.nhtsa.dot.gov/api/vehicles/GetWMIsForManufacturer/hon?format=json`
+    )
+  ).json();
   data.Results.forEach((e, index) => {
     content.innerHTML += `<tr>
     <th scope="row">${index + 1}</th>
@@ -37,5 +41,3 @@ async function bike() {
   });
 }
 bike();
-
-
